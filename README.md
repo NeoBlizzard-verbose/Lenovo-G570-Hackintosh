@@ -1,5 +1,6 @@
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using OpenCore 
+
 [DISCLAIMER]
 Before you proceed any further, you, the reader, accept that all changes that you are willing to perform on 
 your personal computer are at your own risk, and that I will NOT BE HELD RESPONSIBLE if you managed to summon 

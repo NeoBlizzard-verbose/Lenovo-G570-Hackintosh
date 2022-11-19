@@ -13,7 +13,7 @@ My Specs:-
 Core i3 2310M
 iHD 3000 (iGPU only, no dGPU for me) (sad noises)
 8GB (2x4GB DDR3L)
-Crucial MX250
+Crucial MX250 SSD
 dying keyboard
 nice battery
 moar?
@@ -25,18 +25,20 @@ Using bootice, duetpkg will be flashed which gets written @ the MBR and PBR of b
 This device does not need USB patching IMO (Please, CMIIW. I don't "explicitly" remember applying USB Patches)
 IRQ is self-compiled and ACPI-patched in config.plist, rest are prebuilt.
 
-3 March 2022 = fail
-WIP! NOT READY! WILL BE, SOON...
+What works/doesn't? 
+TBA
 
-4th March 2022
-placed files needed for duetpkg to read OCBL.
-USB boots (finally) but throws a kernel panic error, which i cannot fix with my expertise rn
-
-PS:- I had more luck booting off of a blunt USB on the first try than this calculated approach. How ironic 
-
-20 November 2022
-
+Changelog:-
+> 20 November 2022
 The blind build is back, except it is now more raw and messed up.
 But hey, it boots, so, profit?
 I blame incycledream for guilting me into doing this again. Wrapped it up in 2 hrs. tops, nice record xD
 There's a lot of work to do, NGL. Checklist soon
+
+> 4th March 2022
+placed files needed for duetpkg to read OCBL.
+USB boots (finally) but throws a kernel panic error, which i cannot fix with my expertise rn
+
+> 3 March 2022 = fail
+WIP! NOT READY! WILL BE, SOON...
+PS:- I had more luck booting off of a blunt USB on the first try than this calculated approach. How ironic 

@@ -26,7 +26,7 @@ Notes/observations:-
 1.) Legacy systems can't boot GPT. But, OpenCore can only boot GPT boot drives and thus, duetpkg will be used.
 2.) Post installation, disable SIP and use the BootInstallx64.command found in Utilities to flash the boot drive 
     so that the laptop can be booted without the USB drive.
-> The above step is important as (in my experience) the nvram patch works only when the EFI is in the boot drive, but not when booting off of USB.
+The above step is important as (in my experience) the nvram patch works only when the EFI is in the boot drive, but not when booting off of USB.
 3.) To fix sleep, use XOSI SSDT. However, sleep acts weird. When the device is woke up post sleep, it boots back to BIOS and then to OS.
 (Maybe it doesn't know the boot drive UUID?) 
 4.) All SSDTs are self-compiled. No prebuilts were used. So, I'm omitting them from my repo. The list of SSDTs required will be posted soon on the wiki?

@@ -1,3 +1,6 @@
+NOTE:- EFI is OUTDATED! I'M BUSY ENJOYING MY HACKINTOSH AND THERE'S MORE THAN 100 FILES TO BE CHANGED SO WAIT UNTIL I REMOVE THIS NOTE!
+       Sorry for the unavailability. Will get it up ASAP, as well as a guide on how to bake this to your specific Lenovo G570 :)
+
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 
 

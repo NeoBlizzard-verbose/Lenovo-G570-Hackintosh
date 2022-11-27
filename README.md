@@ -29,12 +29,15 @@ Notes/observations:-
 4.) All SSDTs are self-compiled. No prebuilts were used. So, I'm omitting them from my repo. The list of SSDTs required will be posted soon on the wiki?
 5.) Touchpad is wonky right after booting. It settles after a while but deadzones are fucked. Buttons work using the kext included in this repo. (Thanks to 1Revenger1)
 6.) My wifi card is cooked, I don't know why. It works. Period. 
-7.) Native b0rightness control keys do not work, managed to remap brightness keys shortcuts to F6 and F7 from system settings but this option disappeared after injecting edid via hackintool (removing it did not work, so did rebuilding kext cache)
+7.) Native b0rightness control keys (fn + up-down arrow keys) do not work, (me leji to do ACPI edits /patches watever) managed to remap brightness keys shortcuts to F6 and F7 from system settings but this option disappeared after injecting edid via hackintool (removing it did not work, so did rebuilding kext cache)
 8.) Occasional glitches to the UI and a freeze when AppStore is loaded in the background. Meh, pretty common for me on Windows so I didn't bother.
+    Hey, on the plus side, I get MacOS and three-finger gestures, so, the bugs can be ignored in my case, YMMV. 
 9.) Inbuilt mic is fucked, along with external 3.5mm mic. BT is da wae? or Camo Studio yay!
 10.) Used the lenovo T470 AppleHDA layout-id as it is identical. 
 11.) Don't forget to enable TRIM else SSD fuck-up soon...
-12.) Use ECEnabler for fixing battery readouts
+12.) Used ECEnabler for fixing battery readouts
+13.) Keyboard does not work in OpenCore boot menu, external usb keyboard works, but not mouse. On the contrary, native mouse works, not keyboard. Pathetic.
+
 More?  
 
 Hackintosh Checklist - What's working?
@@ -97,7 +100,7 @@ Keyboard
 [✔️] Option/Command correctly mapped in macOS
 For PC Keyboards swap in: System preferences -> Keyboard -> Modifier Keys
 
-[✔️] Fn keys working
+[-] Fn keys working
 
 USB
 Use USBMap (?)

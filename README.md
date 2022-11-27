@@ -1,226 +1,145 @@
 # Lenovo-G570-Hackintosh
-[WIP] MacOS High Sierra on Lenovo G570 (20079) using OpenCore 
+[WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 
 
 [DISCLAIMER]
-Before you proceed any further, you, the reader, accept that all changes that you are willing to perform on 
-your personal computer are at your own risk, and that I will NOT BE HELD RESPONSIBLE if you managed to summon 
+Before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
+your personal G570 computer are at your own risk, and that I will NOT BE HELD RESPONSIBLE if you managed to summon 
 a nuke to your location or if you managed to bring world peace by letting aliens take over our planet... 
 (the irony)
 
 Hello, true believers and newcomers alike!
-Here is the EFI that I will be using to get Hackintosh OC High Sierra to work on my Lenovo G570 20079
+Here is the EFI that I used to get Hackintosh High Sierra working on my Lenovo G570 20079
 
 My Specs:-
 Core i3 2310M
-iHD 3000 (iGPU only, no dGPU for me) (sad noises)
-8GB (2x4GB DDR3L)
+iHD 3000 (iGPU only, no dGPU for me)
+8GB (2x4GB) Samsung DDR3L RAM
 Crucial MX250 SSD
-dying keyboard
-nice battery
+Dying keyboard
+nice battery (90% health xd)
 moar?
 
 Notes/observations:- 
-Legacy systems can't boot GPT, but the usage of GPT USB is unavoidable because that's the M.O of OCBL.
-Using bootice, duetpkg will be flashed which gets written @ the MBR and PBR of boot USB, enabling users to boot GPT on legacy
-(intuitive, indeed)
-This device does not need USB patching IMO (Please, CMIIW. I don't "explicitly" remember applying USB Patches)
-IRQ is self-compiled and ACPI-patched in config.plist, rest are prebuilt.
+1.) Legacy systems can't boot GPT. But, OpenCore can only boot GPT boot drives and thus, duetpkg will be used.
+2.) Post installation, disable SIP and use the BootInstallx64.command found in Utilities to flash the boot drive 
+    so that the laptop can be booted without the USB drive.
+> The above step is important as (in my experience) the nvram patch works only when the EFI is in the boot drive, but not when booting off of USB.
+3.) To fix sleep, use XOSI SSDT. However, sleep acts weird. When the device is woke up post sleep, it boots back to BIOS and then to OS.
+(Maybe it doesn't know the boot drive UUID?) 
+4.) All SSDTs are self-compiled. No prebuilts were used. So, I'm omitting them from my repo. The list of SSDTs required will be posted soon on the wiki?
+5.) Touchpad is wonky right after booting. It settles after a while but deadzones are fucked. Buttons work using the kext included in this repo. (Thanks to 1Revenger1)
+6.) My wifi card is cooked, I don't know why. It works. Period. 
+7.) Native b0rightness control keys do not work, managed to remap brightness keys shortcuts to F6 and F7 from system settings but this option disappeared after injecting edid via hackintool (removing it did not work, so did rebuilding kext cache)
+8.) Occasional glitches to the UI and a freeze when AppStore is loaded in the background. Meh, pretty common for me on Windows so I didn't bother.
+9.) Inbuilt mic is fucked, along with external 3.5mm mic. BT is da wae? or Camo Studio yay!
+10.) Used the lenovo T470 AppleHDA layout-id as it is identical. 
+11.) Don't forget to enable TRIM else SSD fuck-up soon...
+12.) Use ECEnabler for fixing battery readouts
+More?  
 
-What works/doesn't?
 Hackintosh Checklist - What's working?
 Desktop and General
 OpenCore Booting
-[ ] Correct OS choices shown in OpenCore Menu/GUI
-
-[ ] Keyboard shortcuts working (see details below)
-
-CMD+V — verbose mode.
-
-[ ] NVRAM working Verifying if you have working NVRAM
-
-Apple -> System Preferences -> Startup Disk (uses NVRAM).
-
-[ ] Security (especially SIP) use Menu Bar SIP Detector
-
-[ ] FileVault
-
-[ ] Multibooting
+[✔️] Correct OS choices shown in OpenCore Menu/GUI
+[✔️] Keyboard shortcuts working (only USB external keyboard, not native PS/2)
+[✔️] NVRAM working (No log during boot saying NVRAM not found)
+[✔️] Security (especially SIP) use Menu Bar SIP Detector
+[?] FileVault
+[?] Multibooting
 
 Display
 [ ] Display via HDMI
-
-[ ] Display via DisplayPort
-
-[ ] Display via DVI
-
-[ ] Resolution
-
-[ ] Refresh rates
-
+[ ] Display via VGA
+[✔️] Resolution
+[✔️] Refresh rates
 [ ] Multimonitor displays
 
 Graphics Acceleration
-[ ] dGPU dedicated GPU
-
-In Terminal: gfxutil -f GFX0 or check in IORegistryExplorer
-
-[ ] iGPU internal GPU
-
-In Terminal: gfxutil -f IGPU or check in IORegistryExplorer
-
-[ ] QE/CI (full acceleration requires both Quartz Extreme and Core Image)
-
-Check for transparent menu bar and fast smooth UI.
-
-[ ] VDA (Video Decode Acceleration framework)
-
-Hackintool -> System -> System -> VDA Decoder (should show 'fully supported')
-
-[ ] Metal
-
-System Information -> Graphics/Displays -> Metal: Supported
+[ ] dGPU dedicated GPU (No dGPU for me)
+[✔️] iGPU internal GPU
+[✔️] QE/CI (full acceleration requires both Quartz Extreme and Core Image)
+[✔️] VDA (Video Decode Acceleration framework)
+[X] Metal (Was it ever supported on the Intel HD 3000?)
 
 GLView
 
 Geekbench -> Compute -> Metal
 
 Audio
-[ ] Audio out (Audio MIDI Setup)
-
-[ ] Audio in
-
-[ ] Frontpanel audio connectors
-
-[ ] Audio over HDMI
-
-[ ] Audio quality
+[✔️] Audio out (Audio MIDI Setup)
+[-] Audio in
+[-] Sidepanel audio connectors (audio out ok, audio in dead)
+[?] Audio over HDMI
+[✔️] Audio quality (on par with Linux, but ok for me)
 
 Sleep & Power
-[ ] Manual Sleep (Apple menu -> Sleep)
-
-[ ] Auto Sleep (System preferences -> Energy Saver)
-
-[ ] Wake by keyboard
-
-[ ] Wake by mouse/trackpad
-
-[ ] Sleep by Press and hold power button for 1.5 seconds
-
-[ ] Shutdown (from Apple menu)
-
-[ ] Restart (from Apple menu)
+[✔️] Manual Sleep (Apple menu -> Sleep) (Fixed after adding XOSI)
+[?] Auto Sleep (System preferences -> Energy Saver) (I remember my Hackintosh random rebooting after this, so, unsure...)
+[✔️] Wake by keyboard
+[X] Wake by mouse/trackpad
+[?] Sleep by Press and hold power button for 1.5 seconds
+[✔️] Shutdown (from Apple menu)
+[✔️] Restart (from Apple menu)
 
 CPU
 [ ] CPU Power Management Optimizing Power Management
-
 Check with IORegistryExplorer
 
 [ ] Temperatures and stability with 100% CPU
-
 Use Prime95 Torture Test
 
 Disk
 Test with Blackmagic Disk Speedtest
-
-[ ] NVMe SSD
-
-[ ] SATA SSD
-
-[ ] TRIM support (System Information -> SATA -> SSD drive)
+[✔️] SATA SSD
+[✔️] TRIM support (System Information -> SATA -> SSD drive)
 
 Keyboard
-[ ] Option/Command correctly mapped in macOS
-
+[✔️] Option/Command correctly mapped in macOS
 For PC Keyboards swap in: System preferences -> Keyboard -> Modifier Keys
 
-[ ] Fn keys working
+[✔️] Fn keys working
 
 USB
-Use USBMap
+Use USBMap (?)
 
 Test external drives with Blackmagic Disk Speedtest
 
-[ ] USB 2 ports
-
-[ ] USB 2 on USB 3 ports
-
-[ ] USB 3 and 3.1 ports (check transfer speed during copy)
-
-[ ] USB C ports
-
-[ ] SD Card Reader
-
-[ ] Camera (Photo Booth, Facetime, Zoom)
-
-[ ] Fingerprint reader
-
-ThunderBolt
-[ ] File transfer
-
-[ ] Display
+[✔️] USB 2 ports
+[?] SD Card Reader
+[✔️] Camera (Photo Booth, Facetime, Zoom)
 
 Ethernet
-[ ] Gigabit LAN (System preferences -> Network -> Ethernet -> Advanced -> Hardware -> Speed should be 1000baseT)
-
-[ ] 2.5GBase-T (especially on Comet Lake and above boards)
-
-[ ] 10GBase-T (Aquantia with updated firmware)
+[✔️] Gigabit LAN (System preferences -> Network -> Ethernet -> Advanced -> Hardware -> Speed should be 1000baseT)
 
 Wifi & Bluetooth
-[ ] Wifi transmission speed (Option Click -> Wifi menu bar icon -> check Tx Rate)
-
-[ ] Bluetooth devices (trackpad, mouse, keyboard, headset)
-
+[✔️] Wifi transmission speed (Option Click -> Wifi menu bar icon -> check Tx Rate)
+[✔️] Bluetooth devices (trackpad, mouse, keyboard, headset)
 [ ] AirDrop (test with iDevices)
-
-[ ] AirPlay to Mac (macOS Monterey or later, test with iOS 14 or later devices)
-
-tap the AirPlay icon on your Apple device to share videos to your Hackintosh
-
-[ ] Handoff System requirements for Continuity and Use Continuity which requires macOS Catalina & iOS 13+
-
-[ ] Sidecar requires macOS Catalina or later and a compatible iPad using iPadOS 13 or later.
 
 OS Features
 [ ] iMessage, FaceTime, App Store, iTunes Store
-
 [ ] DRM support (iTunes Movies, Apple TV+, Amazon Prime and Netflix, and others)
 
-Laptop Specific
-additional checks relevant for Notebooks including MacBooks with Legacy Patchers
-
 Display
-[ ] Backlight setting
-
-[ ] Backlight sensor
-
-[ ] Backlight Fn keys
+[✔️] Backlight setting
 
 Audio
-[ ] Speaker (built-in)
-
-[ ] Microphone (built-in)
+[✔️] Speaker (built-in)
+[X] Microphone (built-in)
 
 Sleep & Power
-[ ] Sleep by close lid
-
-[ ] Sleep by close lid with external display
-
-[ ] Wake by open lid
+[X] Sleep by close lid
+[?] Sleep by close lid with external display
+[?] Wake by open lid
 
 Battery
-[ ] Showing percentage
-
-[ ] Showing capacity/health
-
-coconutBattery
-
-[ ] Charge plug/unplug detected
+[✔️] Showing percentage
+[✔️] Showing capacity/health
+[✔️] Charge plug/unplug detected
 
 Trackpad
-[ ] Basic functions
-
-[ ] Gestures
+[✔️] Basic functions
+[✔️] Gestures
 
 Changelog:-
 > 20 November 2022

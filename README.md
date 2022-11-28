@@ -1,11 +1,13 @@
-NOTE:- EFI is OUTDATED! I'M BUSY ENJOYING MY HACKINTOSH AND THERE'S MORE THAN 100 FILES TO BE CHANGED SO WAIT UNTIL I REMOVE THIS NOTE!
-       Sorry for the unavailability. Will get it up ASAP, as well as a guide on how to bake this to your specific Lenovo G570 :)
-
+NOTE:- EFI is up to date, but you need to do more stuff.
+       GenSMBIOS for serial (patch as MBP8.1)
+       OC beautification process -> resources folder -> paste accordingly
+       
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 
 
 [DISCLAIMER]
-Before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
+Depending on your specs, if they are as accurate as mine, it shouldn't be a problem using this EFI OOTB.
+However, before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
 your personal G570 computer are at your own risk, and that I will NOT BE HELD RESPONSIBLE if you managed to summon 
 a nuke to your location or if you managed to bring world peace by letting aliens take over our planet... 
 (the irony)
@@ -18,6 +20,8 @@ Core i3 2310M
 iHD 3000 (iGPU only, no dGPU for me)
 8GB (2x4GB) Samsung DDR3L RAM
 Crucial MX250 SSD
+Conexant CX20590
+ACPI\VPC2004
 Dying keyboard
 nice battery (90% health xd)
 moar?
@@ -40,6 +44,7 @@ The above step is important as (in my experience) the nvram patch works only whe
 11.) Don't forget to enable TRIM else SSD fuck-up soon...
 12.) Used ECEnabler for fixing battery readouts
 13.) Keyboard does not work in OpenCore boot menu, external usb keyboard works, but not mouse. On the contrary, native mouse works, not keyboard. Pathetic.
+14.) Boot chime works, battery conservation mode works via YogaSMB, remap brightness keys to F6 and F7 and there you go, a full-blown Apple device appears.
 
 More?  
 
@@ -137,6 +142,7 @@ Sleep & Power
 [X] Sleep by close lid
 [?] Sleep by close lid with external display
 [?] Wake by open lid
+[✔️] Battery Conservation mode (Using YogaSMC)
 
 Battery
 [✔️] Showing percentage

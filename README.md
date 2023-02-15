@@ -18,6 +18,12 @@ Hello, true believers and newcomers alike!
 Here is the EFI that I used to get MacOS working on my Lenovo G570 (20079).
 I currently use Catalina. Thus, some information here is adopted for Catalina ONLY! I will try to include more for <10.15.x
 
+Note:-
+Before you go any further, disable the following using advanced BIOS (Google Lenovo G570 Advanced BIOS Settings)
+Vt-d
+Serial Port
+DVMT Pre-allocated: 64MB
+
 My Specs:-
 Intel Core i3 2310M
 iHD 3000 (iGPU only, no dGPU for me)
@@ -46,9 +52,9 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 7.) Too many controls to control brightness. I gave up eliminating the others since I stopped bothering.
 8.) Display artefacts exist, even after patches. Even EDID patching didn't help.
 9.) Occasional freezes when multitasking heavily, so, tread lightly (ig?)
-10.) Tried to fix resolution but gave up.  
+10.) Tried to fix resolution during picker but gave up.  
 13.) Inbuilt Keyboard does not work in OpenCore boot menu. Internal trackpad and external keyboard/mouse work fine. 
-14.) Boot chime enabled.
+14.) Boot chime enabled. Using VoodooHDA as it has internal mic working. Mic port is still dead and I don't have any interest to write custom AppleALC codec
 
 More?  
 
@@ -159,7 +165,7 @@ Trackpad
 
 Changelog:-
 > 15 February 2023
-Much needed improvements were made. 
+Much needed improvements were made. Sorry for the fucked layout. I'll try to fix it (soon)
 
 > 20 November 2022
 The blind build is back, except it is now more raw and messed up.

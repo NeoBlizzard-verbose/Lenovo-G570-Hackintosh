@@ -3,48 +3,52 @@ NOTE:- EFI is up to date, but you need to do more stuff.
        OC beautification process -> resources folder -> paste accordingly
        
 # Lenovo-G570-Hackintosh
-[WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 
+[WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader.
+Can also boot Mojave (preferred) and Catalina with dosdude1's patched installers.
 
 [DISCLAIMER]
-Depending on your specs, if they are as accurate as mine, it shouldn't be a problem using this EFI OOTB.
-However, before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
+Before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
 your personal G570 computer are at your own risk, and that I will NOT BE HELD RESPONSIBLE if you managed to summon 
 a nuke to your location or if you managed to bring world peace by letting aliens take over our planet... 
 (the irony)
+That said, if your G570's specifications are as accurate as mine, it shouldn't be a problem using this EFI OOTB. Adapt this EFI to your laptop
+with due diligence and use responsibly.
 
 Hello, true believers and newcomers alike!
-Here is the EFI that I used to get Hackintosh High Sierra working on my Lenovo G570 20079
+Here is the EFI that I used to get MacOS working on my Lenovo G570 (20079).
+I currently use Catalina. Thus, some information here is adopted for Catalina ONLY! I will try to include more for <10.15.x
 
 My Specs:-
-Core i3 2310M
+Intel Core i3 2310M
 iHD 3000 (iGPU only, no dGPU for me)
 8GB (2x4GB) Samsung DDR3L RAM
 Crucial MX250 SSD
 Conexant CX20590
-ACPI\VPC2004
-Dying keyboard
-nice battery (90% health xd)
-moar?
+Broadcom Bluetooth 2.1+EDR
+BCM94322HM8L WiFi card
+ACPI\VPC2004 YogaSMC included
+1366x768 BOE display panel
+Unlocked BIOS ADV+NWL (40CN33WW)
+more...
 
 Notes/observations:- 
-1.) Legacy systems can't boot GPT. But, OpenCore can only boot GPT boot drives and thus, duetpkg will be used.
-2.) Post installation, disable SIP and use the BootInstallx64.command found in Utilities to flash the boot drive 
+1.) Legacy systems can't boot GPT. But, OpenCore can only boot GPT boot drives and thus, duetpkg will be used automagically by OpenCorePkg.
+2.) Post installation, disable SIP and use the BootInstallx64.command found in "Utilities" to patch the boot drive 
     so that the laptop can be booted without the USB drive.
-The above step is important as (in my experience) the nvram patch works only when the EFI is in the boot drive, but not when booting off of USB.
+The above step is important as (in my experience) the NVRAM patch works only when the EFI is in the boot drive, but not when booting off of USB.
 3.) To fix sleep, use XOSI SSDT. However, sleep acts weird. When the device is woke up post sleep, it boots back to BIOS and then to OS.
 (Maybe it doesn't know the boot drive UUID?) 
-4.) All SSDTs are self-compiled. No prebuilts were used. So, I'm omitting them from my repo. The list of SSDTs required will be posted soon on the wiki?
-5.) Touchpad is wonky right after booting. It settles after a while but deadzones are fucked. Buttons work using the kext included in this repo. (Thanks to 1Revenger1)
-6.) My wifi card is cooked, I don't know why. It works. Period. 
-7.) Native b0rightness control keys (fn + up-down arrow keys) do not work, (me leji to do ACPI edits /patches watever) managed to remap brightness keys shortcuts to F6 and F7 from system settings but this option disappeared after injecting edid via hackintool (removing it did not work, so did rebuilding kext cache)
-8.) Occasional glitches to the UI and a freeze when AppStore is loaded in the background. Meh, pretty common for me on Windows so I didn't bother.
-    Hey, on the plus side, I get MacOS and three-finger gestures, so, the bugs can be ignored in my case, YMMV. 
-9.) Inbuilt mic is fucked, along with external 3.5mm mic. BT is da wae? or Camo Studio yay!
-10.) Used the lenovo T470 AppleHDA layout-id as it is identical. 
-11.) Don't forget to enable TRIM else SSD fuck-up soon...
-12.) Used ECEnabler for fixing battery readouts
-13.) Keyboard does not work in OpenCore boot menu, external usb keyboard works, but not mouse. On the contrary, native mouse works, not keyboard. Pathetic.
-14.) Boot chime works, battery conservation mode works via YogaSMB, remap brightness keys to F6 and F7 and there you go, a full-blown Apple device appears.
+I WON'T FIX SLEEP
+4.) All SSDTs are compiled. No prebuilts were used.
+Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Conservative mode is enabled (Thanks to oc-little guide)
+5.) Thanks to 1Revenger1 for ultimate fixes to the Synaptics touchpad. However, Touchpad is wonky for a while after booting. Eventually works good.
+6.) Mapped USB for Catalina, USE USBMAP TO EDIT THE IOCLASS FOR VERSIONS LOWER THAN CATALINA!!
+7.) Too many controls to control brightness. I gave up eliminating the others since I stopped bothering.
+8.) Display artefacts exist, even after patches. Even EDID patching didn't help.
+9.) Occasional freezes when multitasking heavily, so, tread lightly (ig?)
+10.) Tried to fix resolution but gave up.  
+13.) Inbuilt Keyboard does not work in OpenCore boot menu. Internal trackpad and external keyboard/mouse work fine. 
+14.) Boot chime enabled.
 
 More?  
 
@@ -154,6 +158,9 @@ Trackpad
 [✔️] Gestures
 
 Changelog:-
+> 15 February 2023
+Much needed improvements were made. 
+
 > 20 November 2022
 The blind build is back, except it is now more raw and messed up.
 But hey, it boots, so, profit?

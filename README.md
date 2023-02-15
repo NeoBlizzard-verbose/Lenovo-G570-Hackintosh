@@ -1,9 +1,9 @@
 NOTE:- EFI is up to date, but you need to do more stuff.
        GenSMBIOS for serial (patch as MBP8.1)
-       OC beautification process -> resources folder -> paste accordingly
+       OC beauty treatment -> resources folder -> paste accordingly
        
 # Lenovo-G570-Hackintosh
-[WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader.
+[WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 0.8.9
 Can also boot Mojave (preferred) and Catalina with dosdude1's patched installers.
 
 [DISCLAIMER]

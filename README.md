@@ -79,7 +79,7 @@ More?
 ### Graphics Acceleration
 #### Dedicated GPU:
 - [❌] Radeon HD 6370M [tested by incycledream long time ago]
-- [?] NVIDIA [not tested]
+- [?] NVIDIA GeForce GT 410M [not tested]
 #### ——————————
 - [✔️] iGPU internal GPU
 - [✔️] QE/CI (full acceleration requires both Quartz Extreme and Core Image)

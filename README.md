@@ -1,5 +1,5 @@
 NOTE:- EFI is up to date, but you need to do more stuff.
-       GenSMBIOS for serial (patch as MBP8,1)
+       GenSMBIOS for serial (patch as MBP8,1 or MBP10,1)
        OC beauty treatment -> resources folder -> paste accordingly
        
 # Lenovo-G570-Hackintosh
@@ -26,6 +26,8 @@ DVMT Pre-allocated: 64MB
 
 # Tested on:
 #### NeoBlizzard
+- macOS: 10.13.6
+- SMBIOS: MacBookPro8,1
 - CPU: Intel Core i3 2310M
 - GPU: Intel HD 3000 (iGPU only, no dGPU for me)
 - RAM: 8GB (2x4GB) Samsung DDR3L RAM
@@ -39,12 +41,13 @@ DVMT Pre-allocated: 64MB
 
 #### incycledream
 - macOS: 10.15.7
+- SMBIOS: MacBookPro10,1
 - CPU: Intel Core i5 2410M
 - GPU: Intel HD 3000, Radeon HD 3670M (HD 3000 2048 patch disabled)
 - RAM: 8GB (2x2GB) Samsung DDR3L RAM
 - SSD: Apacer Panther AS340
 - Audio: Conexant CX20590
-- Bluetooth: lemme remember
+- Bluetooth: Broadcom Bluetooth 2.1+EDR
 - WiFi card: Atheros AR9285
 - ACPI\VPC2004 YogaSMC included
 - 1366x768 BOE display panel
@@ -55,7 +58,7 @@ DVMT Pre-allocated: 64MB
 - Post installation, disable SIP and use the BootInstallx64.command found in "Utilities" to patch the boot drive 
     so that the laptop can be booted without the USB drive.
 The above step is important as (in my experience) the NVRAM patch works only when the EFI is in the boot drive, but not when booting off of USB.
-- 3.) To fix sleep, use XOSI SSDT. However, sleep acts weird. When the device is woke up post sleep, it boots back to BIOS and then to OS.
+- To fix sleep, use XOSI SSDT. However, sleep acts weird. When the device is woke up post sleep, it boots back to BIOS and then to OS.
 (Maybe it doesn't know the boot drive UUID?) 
 I WON'T FIX SLEEP
 - All SSDTs are compiled. No prebuilts were used.
@@ -68,8 +71,6 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 - Tried to fix resolution during picker but gave up.  
 - Inbuilt Keyboard does not work in OpenCore boot menu. Internal trackpad and external keyboard/mouse work fine. 
 - Boot chime enabled. Using VoodooHDA as it has internal mic working. Mic port is still dead and I don't have any interest to write custom AppleALC codec
-
-More?  
 
 # Hackintosh Checklist - What's working?
 ## Desktop and General

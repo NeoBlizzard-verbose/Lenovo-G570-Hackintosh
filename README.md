@@ -24,7 +24,8 @@ Vt-d
 Serial Port
 DVMT Pre-allocated: 64MB
 
-# My Specs:
+# Tested on:
+#### NeoBlizzard
 - CPU: Intel Core i3 2310M
 - GPU: Intel HD 3000 (iGPU only, no dGPU for me)
 - RAM: 8GB (2x4GB) Samsung DDR3L RAM
@@ -35,7 +36,19 @@ DVMT Pre-allocated: 64MB
 - ACPI\VPC2004 YogaSMC included
 - 1366x768 BOE display panel
 - Unlocked BIOS ADV+NWL (40CN33WW)
-more...
+
+#### incycledream
+- macOS: 10.15.7
+- CPU: Intel Core i5 2410M
+- GPU: Intel HD 3000, Radeon HD 3670M (HD 3000 2048 patch disabled)
+- RAM: 8GB (2x2GB) Samsung DDR3L RAM
+- SSD: Apacer Panther AS340
+- Audio: Conexant CX20590
+- Bluetooth: lemme remember
+- WiFi card: Atheros AR9285
+- ACPI\VPC2004 YogaSMC included
+- 1366x768 BOE display panel
+- Locked BIOS (40CN33WW)
 
 # Notes/observations:
 - Legacy systems can't boot GPT. But, OpenCore can only boot GPT boot drives and thus, duetpkg will be used automagically by OpenCorePkg.

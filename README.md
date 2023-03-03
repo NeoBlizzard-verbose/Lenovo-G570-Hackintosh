@@ -4,7 +4,8 @@ NOTE:- EFI is up to date, but you need to do more stuff.
        
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 0.8.9
-Can also boot Mojave (preferred) and Catalina with dosdude1's patched installers.
+Can also boot Mojave (preferred) and Catalina optionally with dosdude1's patched installers.
+(you need to patch some things manually without patched installer)
 
 ## [DISCLAIMER]
 Before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
@@ -43,8 +44,8 @@ DVMT Pre-allocated: 64MB
 - macOS: 10.15.7
 - SMBIOS: MacBookPro10,1
 - CPU: Intel Core i5 2410M
-- GPU: Intel HD 3000, Radeon HD 3670M (HD 3000 2048 patch disabled)
-- RAM: 8GB (2x2GB) Samsung DDR3L RAM
+- GPU: Intel HD 3000, Radeon HD 3670M (384 > 2048 MB patch)
+- RAM: 4GB (2x2GB) Samsung DDR3L RAM
 - SSD: Apacer Panther AS340
 - Audio: Conexant CX20590
 - Bluetooth: Broadcom Bluetooth 2.1+EDR

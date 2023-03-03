@@ -56,6 +56,7 @@ DVMT Pre-allocated: 64MB
 
 # Notes/observations:
 - Legacy systems can't boot GPT. But, OpenCore can only boot GPT boot drives and thus, duetpkg will be used automagically by OpenCorePkg.
+- Press the power button twice to boot laptop from a shutdown if you have ADV+NWL BIOS
 - Post installation, disable SIP and use the BootInstallx64.command found in "Utilities" to patch the boot drive 
     so that the laptop can be booted without the USB drive.
 The above step is important as (in my experience) the NVRAM patch works only when the EFI is in the boot drive, but not when booting off of USB.

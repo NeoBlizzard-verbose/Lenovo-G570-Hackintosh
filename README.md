@@ -42,7 +42,7 @@ DVMT Pre-allocated: 64MB
 
 #### incycledream
 - macOS: 10.15.7
-- SMBIOS: MacPro6,1
+- SMBIOS: MacPro5,1
 - CPU: Intel Core i5 2410M
 - GPU: Intel HD 3000, Radeon HD 3670M (384 > 2048 MB patch)
 - RAM: 4GB (2x2GB) Samsung DDR3L RAM

@@ -195,5 +195,7 @@ For PC Keyboards swap in: System preferences -> Keyboard -> Modifier Keys
 - 1 March 2023 (incycledream)
 > I fixed the fucked layout
 
-- 2 March 2023 (incycledream)
-> HDMI works but window borders is broken
+- 7 March 2023 (incycledream)
+> BIG SUR INSTALLER BOOTED SUCCESSFULLY.
+> graphics doesn't work but I'll try to do something with my Terascale 2 GPU
+<img src="https://files.catbox.moe/xyav88.jpg">

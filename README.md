@@ -1,7 +1,6 @@
-NOTE:- EFI is up to date, but you need to do more stuff.
-       GenSMBIOS for serial (patch as MBP8,1 or MBP10,1)
-       OC beauty treatment -> resources folder -> paste accordingly
-       
+# CAUTION
+IMAC SMBIOS DOESN'T WORK PROPERLY, DON'T EVER TRY TO GET SUPPORT, IT'S UNUSABLE
+- TESTED ON: CATALINA AND [BIG SUR](https://codeberg.org/satan/HackintoshNext-G570)
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 0.8.9
 Can also boot Mojave (preferred) and Catalina optionally with dosdude1's patched installers.
@@ -19,11 +18,10 @@ Hello, true believers and newcomers alike!
 Here is the EFI that I used to get MacOS working on my Lenovo G570 (20079).
 I currently use Catalina. Thus, some information here is adopted for Catalina ONLY! I will try to include more for <10.15.x
 
-### Note:
-Before you go any further, disable the following using advanced BIOS (Google Lenovo G570 Advanced BIOS Settings)
-Vt-d
-Serial Port
-DVMT Pre-allocated: 64MB
+# Notes:
+- EFI is up to date, but you need to do more stuff.
+- GenSMBIOS for serial (patch as MBP8,1 or MBP10,1)
+- OC beauty treatment -> resources folder -> paste accordingly
 
 # Tested on:
 #### NeoBlizzard

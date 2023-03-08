@@ -1,4 +1,3 @@
-<img 
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 0.8.9
 Can also boot Mojave (preferred) and Catalina optionally with dosdude1's patched installers.

@@ -1,11 +1,11 @@
-# CAUTION
-IMAC SMBIOS DOESN'T WORK PROPERLY, DON'T EVER TRY TO GET SUPPORT, IT'S UNUSABLE
-- TESTED ON: CATALINA AND [BIG SUR](https://codeberg.org/satan/HackintoshNext-G570)
+<img 
 # Lenovo-G570-Hackintosh
 [WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 0.8.9
 Can also boot Mojave (preferred) and Catalina optionally with dosdude1's patched installers.
 (you need to patch some things manually without patched installer)
-
+# CAUTION
+IMAC SMBIOS DOESN'T WORK PROPERLY, DON'T EVER TRY TO GET SUPPORT, IT'S UNUSABLE
+- TESTED ON: CATALINA AND [BIG SUR](https://codeberg.org/satan/HackintoshNext-G570)
 ## [DISCLAIMER]
 Before you proceed any further, you, the reader and a probable user of this EFI, accept that all changes that you are willing to perform on 
 your personal G570 computer are at your own risk, and that I will NOT BE HELD RESPONSIBLE if you managed to summon 
@@ -80,7 +80,7 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 - [✔️] NVRAM working (No log during boot saying NVRAM not found)
 - [✔️] Security (especially SIP) use Menu Bar SIP Detector
 - [?] FileVault
-- [?] Multibooting
+- [✔️] Multibooting
 
 ### Display
 - [✔️] Display via HDMI

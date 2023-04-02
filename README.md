@@ -69,8 +69,9 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 - Too many controls to control brightness. I gave up eliminating the others since I stopped bothering.
 - Display artefacts exist, even after patches. Even EDID patching didn't help.
 - Occasional freezes when multitasking heavily, so, tread lightly (ig?)
-- Tried to fix resolution during picker but gave up.  
+- Tried to fix resolution during picker but gave up.
 - Inbuilt Keyboard does not work in OpenCore boot menu. Internal trackpad and external keyboard/mouse work fine. 
+- Resolution and inbuilt keyboard works properly if OpenCore is booted from EDK DUET.
 - Boot chime enabled. Using VoodooHDA as it has internal mic working. Mic port is still dead and I don't have any interest to write custom AppleALC codec
 
 # Hackintosh Checklist - What's working?
@@ -135,7 +136,7 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 ### CPU
 - [  ] CPU Power Management Optimizing Power Management
 Check with IORegistryExplorer
-- [ ] Temperatures and stability with 100% CPU
+- [  ] Temperatures and stability with 100% CPU
 Use Prime95 Torture Test
 
 ### Drive

@@ -71,7 +71,8 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 - Occasional freezes when multitasking heavily, so, tread lightly (ig?)
 - Tried to fix resolution during picker but gave up.
 - Inbuilt Keyboard does not work in OpenCore boot menu. Internal trackpad and external keyboard/mouse work fine. 
-- Resolution and inbuilt keyboard works properly if OpenCore is booted from EDK DUET.
+- Resolution and inbuilt keyboard works properly if OpenCore is booted from EDK DUET older than 2020. (See cheatsheet below)
+- 
 - Boot chime enabled. Using VoodooHDA as it has internal mic working. Mic port is still dead and I don't have any interest to write custom AppleALC codec
 
 # Hackintosh Checklist - What's working?

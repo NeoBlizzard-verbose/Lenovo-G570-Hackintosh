@@ -82,13 +82,13 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 - [✔️] Keyboard shortcuts working (only USB external keyboard, not native PS/2)
 - [✔️] NVRAM working (No log during boot saying NVRAM not found)
 - [✔️] Security (especially SIP) use Menu Bar SIP Detector
-- [?] FileVault
+- [✔️] FileVault (Not recommended) (Use USB keyboard to enter passcode ASAP)
 - [✔️] Multibooting
 
 ### Display
 - [✔️] Display via HDMI
 - (window borders may be shown incorrectly on a monitor)
-- [?] Display via VGA
+- [❌] Display via VGA
 - [✔️] Resolution
 - [✔️] Refresh rates
 - [✔️] Multimonitor displays
@@ -96,32 +96,30 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 
 ### Graphics Acceleration
 #### Dedicated GPU:
-- [❌] Radeon HD 6370M [tested by incycledream long time ago]
+- [❌] Radeon HD 6370M [Tested by incycledream]
 - [?] NVIDIA GeForce GT 410M [not tested]
 #### ——————————
 - [✔️] iGPU internal GPU
 - [✔️] QE/CI (full acceleration requires both Quartz Extreme and Core Image)
 - [✔️] VDA (Video Decode Acceleration framework)
-- [❌] Metal (Was it ever supported on the Intel HD 3000?)
+- [❌] Metal (Not supported on the Intel HD 3000)
 
-### GLView
-- Geekbench -> Compute -> Metal
 
 ### Audio
 - [✔️] Audio out (Audio MIDI Setup)
 - [-] Audio in
 - [-] Sidepanel audio connectors (audio out ok, audio in dead)
 - [?] Audio over HDMI
-- [✔️] Audio quality (on par with Linux, but ok for me)
+- [✔️] Audio quality (on par with Linux)
 - [✔️] Speaker (built-in)
-- [❌] Microphone (built-in)
+- [✔️] Microphone (built-in) (Works with VoodooHDA)
 
 ### Sleep & Power
-- [✔️] Manual Sleep (Apple menu -> Sleep) (Fixed after adding XOSI)
+- [✔️] Manual Sleep (Apple menu -> Sleep)
 - [?] Auto Sleep (System preferences -> Energy Saver) (I remember my Hackintosh random rebooting after this, so, unsure...)
 - [✔️] Wake by keyboard
 - [❌] Wake by mouse/trackpad
-- [?] Sleep by Press and hold power button for 1.5 seconds
+- [✔️] Sleep by Press and hold power button for 1.5 seconds
 - [✔️] Shutdown (from Apple menu)
 - [✔️] Restart (from Apple menu)
 - [❌] Sleep by close lid
@@ -135,33 +133,32 @@ Fixed SMBusPCI, NumLockIndicator, ECRW on YogaSMC with battery notifier when Con
 - [✔️] Charge plug/unplug detected
 
 ### CPU
-- [  ] CPU Power Management Optimizing Power Management
-Check with IORegistryExplorer
-- [  ] Temperatures and stability with 100% CPU
-Use Prime95 Torture Test
+- [-] CPU Power Management Optimizing Power Management
+To check with IORegistryExplorer
+- [✔️] Temperatures and stability with 100% CPU
+Using CPUX (dot) net
 
 ### Drive
-- Test with Blackmagic Disk Speedtest
 - [✔️] SATA SSD
 - [✔️] TRIM support (System Information -> SATA -> SSD drive)
 
 ### Keyboard
 - [✔️] Option/Command correctly mapped in macOS
 For PC Keyboards swap in: System preferences -> Keyboard -> Modifier Keys
-- [-] Fn keys working
+- [✔️] Fn keys working (YogaSMC)
 
 ### USB
-- [?] Use USBMap
+- [✔️] Use USBMap
 
 ### External devices
-- Test drives with Blackmagic Disk Speedtest
 - [✔️] USB 2 ports
-- [?] SD Card Reader
+- [✔️] SD Card Reader (Works and detected as native on Catalina)
 - [✔️] Camera (Photo Booth, Facetime, Zoom)
 
 ### Trackpad
 - [✔️] Basic functions
 - [✔️] Gestures
+  Wonky for a while post-boot.
 
 ### Ethernet
 - [✔️] Gigabit LAN (System preferences -> Network -> Ethernet -> Advanced -> Hardware -> Speed should be 1000baseT)
@@ -172,8 +169,8 @@ For PC Keyboards swap in: System preferences -> Keyboard -> Modifier Keys
 - [  ] AirDrop (test with iDevices)
 
 ### OS Features
-- [  ] iMessage, FaceTime, App Store, iTunes Store
-- [  ] DRM support (iTunes Movies, Apple TV+, Amazon Prime and Netflix, and others)
+- [✔️] iMessage, FaceTime, App Store, iTunes Store
+- [?] DRM support (iTunes Movies, Apple TV+, Amazon Prime and Netflix, and others)
 
 # Changelog:
 #### - 3 March 2022 = fail

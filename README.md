@@ -3,6 +3,8 @@
 
 Tested on High Sierra, Mojave (preferred) and Catalina (the latter two with dosdude1's patched installers)
 
+Logs and data used for debugging can be found here! <!-- to-do: hyperlink the Debug folder -->
+
 Wanna go on an adventure? [Big Sur](https://codeberg.org/satan/HackintoshNext-G570)
 
 # Notes:

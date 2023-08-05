@@ -1,17 +1,16 @@
 # Lenovo-G570-Hackintosh
-[WIP] MacOS High Sierra on Lenovo G570 (20079) using the OpenCore Bootloader 0.8.9
-Can also boot Mojave (preferred) and Catalina optionally with dosdude1's patched installers.
-(you need to patch some things manually without patched installer)
+[EOL] Boot OS X on Lenovo G570 (20079) using the OpenCore Bootloader
+Tested on High Sierra, Mojave (preferred) and Catalina (the latter two with dosdude1's patched installers)
+
 
 [BIG SUR](https://codeberg.org/satan/HackintoshNext-G570)
 
 # Notes:
-- EFI is up to date, but you need to do more stuff.
-- GenSMBIOS for serial (patch as MBP8,1 or MBP10,1)
-- OC beauty treatment -> resources folder -> paste accordingly
+- EFI is finally up to date and EOL.
+- Use GenSMBIOS to inject DeviceProperties before first boot! (patch as MBP8,1 or MBP10,1)
 
-
-# Changelog:
+<details>
+<summary>Changelog</summary>
 #### - 3 March 2022 = fail
 > WIP! NOT READY! WILL BE, SOON...
 > PS:- I had more luck booting off of a blunt USB on the first try than this calculated approach. How ironic 
@@ -42,3 +41,5 @@ Can also boot Mojave (preferred) and Catalina optionally with dosdude1's patched
 - > from now, big sur updates will be posted here [satan/HackintoshNext-G570](https://codeberg.org/satan/HackintoshNext-G570) (codeberg)
 - > I drop active development, almost everything works normally
 <img src="https://preview.redd.it/kyp56ad5ddma1.png?width=1080&crop=smart&auto=webp&v=enabled&s=de6422e70dc28de7fc0deec2448b14404f690f37">
+</details>
+

@@ -1,13 +1,13 @@
 # Lenovo-G570-Hackintosh
 [EOL] Boot OS X on Lenovo G570 (20079) using the OpenCore Bootloader
+
 Tested on High Sierra, Mojave (preferred) and Catalina (the latter two with dosdude1's patched installers)
 
-
-[BIG SUR](https://codeberg.org/satan/HackintoshNext-G570)
+Wanna go on an adventure? [Big Sur](https://codeberg.org/satan/HackintoshNext-G570)
 
 # Notes:
 - EFI is finally up to date and EOL.
-- Use GenSMBIOS to inject DeviceProperties before first boot! (patch as MBP8,1 or MBP10,1)
+- Use GenSMBIOS to inject DeviceProperties before first boot! (patch as MBP8,1 or MBP10,1 depending on the OS version)
 
 <details>
 <summary>Changelog</summary>

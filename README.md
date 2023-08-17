@@ -3,7 +3,7 @@
 
 Tested on High Sierra, Mojave (preferred) and Catalina (the latter two with dosdude1's patched installers)
 
-Logs and data used for debugging can be found here! <!-- to-do: hyperlink the Debug folder -->
+Logs and data used for debugging can be found [here!](https://github.com/NeoBlizzard-verbose/Lenovo-G570-Hackintosh/tree/main/Debug)
 
 Wanna go on an adventure? [Big Sur](https://codeberg.org/satan/HackintoshNext-G570)
 
